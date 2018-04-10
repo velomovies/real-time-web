@@ -15,15 +15,13 @@
       i = 0
     }, 500)
     
-    if (i > 2) {
-      piano.classList.add('hidden')
-      setTimeout(function () {
-        i = 0
-        piano.classList.remove('hidden')
-      }, 3000)
-    }
-
-    console.log(i)
+    // if (i > 2) {
+    //   piano.classList.add('hidden')
+    //   setTimeout(function () {
+    //     i = 0
+    //     piano.classList.remove('hidden')
+    //   }, 3000)
+    // }
   })
 
   function startTone(tone) {
