@@ -1,20 +1,30 @@
 (function () {
 
-  const tones = ['C', 'CIS', 'D', 'DIS', 'E', 'F', 'FIS', 'G', 'GIS', 'A', 'AIS', 'B', 'C']
+  const tones = ['C', 'CIS', 'D', 'DIS', 'E', 'F', 'FIS', 'G', 'GIS', 'A', 'AIS', 'B', 'C2']
 
   const socket = io()
 
   const piano = document.querySelector('.piano')
 
-  // const form = document.querySelector('form')
-  // const messages = document.querySelector('#messages')
-  // let input = document.querySelector('#m')
+  let i = 0
 
-  // form.addEventListener('submit', function (e) {
-  //   e.preventDefault()
-  //   socket.emit('chat message', input.value)
-  //   input.value = ''
-  // })
+  piano.addEventListener('click', function() {
+    clearTimeout()
+    i++
+    setTimeout(function () {
+      i = 0
+    }, 500)
+    
+    if (i > 2) {
+      piano.classList.add('hidden')
+      setTimeout(function () {
+        i = 0
+        piano.classList.remove('hidden')
+      }, 3000)
+    }
+
+    console.log(i)
+  })
 
   function startTone(tone) {
     const pianoTone = new Audio(`../music/${tone}.wav`)
