@@ -8,6 +8,10 @@ body {
   font-family: sans-serif;
 }
 
+kbd {
+  display: block;
+}
+
 :focus {
   outline: none;
 }
@@ -34,11 +38,11 @@ form label {
   transition: all .3s;
 }
 
-form label:hover {
+form label:hover, form:focus-within label {
   background: #e2e2e2;
 }
 
-form input:checked + label:hover {
+form input:checked + label:hover, form:focus-within input:checked + label {
   background: black;
 }
 
@@ -69,7 +73,7 @@ button {
   border-radius: 0 0 .5em .5em;
 }
 
-button:active {
+button:focus, button.active {
   box-shadow: inset 3px 2px 3px #999, inset -3px 2px 3px #999;
 }
 
